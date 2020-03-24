@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="cs_check_fail" max_length="40" name="x_snc_irm_contmon_cs_check_fail" type="collection">
+        <element label="Check name" max_length="500" name="check_name" type="string"/>
+        <element label="CI" max_length="32" name="ci" reference="x_snc_irm_contmon_cm_server" type="reference"/>
+        <element label="comments" max_length="500" name="comments" type="string"/>
+        <element label="Last found" max_length="40" name="last_found" type="glide_date"/>
+        <index name="index">
+            <element name="ci"/>
+        </index>
+    </element>
+</database>

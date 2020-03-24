@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_script">
+    <sys_transform_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <map display_value="create standards">427654dddb23cc909c3f7c0565961977</map>
+        <order>100</order>
+        <script><![CDATA[(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
+
+	//TODO - Advance standards to approved
+	
+		gs.info('[CS] attaching entity type to standard:'+target.name);
+    var entt = new GlideRecord('sn_grc_profile_type');
+    var stup = new x_snc_irm_contmon.ObjectSetup();
+    if (entt.get('name', stup.entityTypename)) {
+		gs.info('[CS] entity found:'+entt.sys_id);
+        // cretae the control objective to entity type mapping
+        var m2m = new GlideRecord('sn_compliance_m2m_statement_profile_type');
+        m2m.initialize();
+        m2m.sn_compliance_statement = target.sys_id;
+        m2m.sn_grc_profile_type = entt.sys_id;
+        var val = m2m.insert();
+		gs.info('[CS] entity attached ret:'+val +' taget: '+target.name);
+    } else {
+        gs.error('[CS Import] Cant find entyt type for binding with object: ' + target.name);
+    }
+})(source, map, log, target);]]></script>
+        <sys_class_name>sys_transform_script</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-16 08:40:41</sys_created_on>
+        <sys_id>8908274adb6b04d09c3f7c0565961996</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>onAfter</sys_name>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_update_name>sys_transform_script_8908274adb6b04d09c3f7c0565961996</sys_update_name>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-16 17:39:38</sys_updated_on>
+        <when>onAfter</when>
+    </sys_transform_script>
+</record_update>

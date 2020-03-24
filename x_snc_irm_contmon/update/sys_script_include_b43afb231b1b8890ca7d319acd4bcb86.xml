@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_irm_contmon.ObjectSetup</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Create default demo artifacts</description>
+        <name>ObjectSetup</name>
+        <script><![CDATA[var ObjectSetup = Class.create();
+ObjectSetup.prototype = {
+    initialize: function() {
+		this.cmpName = 'CS'; //Default Company Name
+		this.bs =['BondTrading','Ledger','WM_Online_Banking'];
+		this.standard = 'Systems hardening';
+		this.entityTypename = 'Server hardening';
+    },
+	createArtifacts: function(){
+		gs.info('[CS] Setting up intial objects.');
+		//Defualt company for CIs
+		gs.info('[CS] Adding company:'+this.cmpName);
+		var cmp = new GlideRecord('core_company');
+		if(!cmp.get('name', this.cmpName)){
+			cmp.initialize();
+		}
+		cmp.name = this.cmpName;
+		cmp.update();
+		
+		gs.info('[CS] Adding services: '+this.bs);
+		this.bs.forEach(function(entry) {
+			var bs = new GlideRecord('cmdb_ci_service');
+			if(!bs.get('name', entry)){
+				bs.initialize();
+			}
+			bs.name = entry;
+			bs.update();
+		});
+		
+		gs.info('[CS] Adding standard:'+this.standard);
+		var std = new GlideRecord('sn_compliance_policy');
+		if(!std.get('name',this.standard)){
+			std.initialize();
+		}
+		std.name = this.standard;
+		//std.state = 'published';
+		std.active = 'true';
+		std.update();
+		
+		gs.info('[CS] Adding entity type:'+this.entityTypename);
+		var et = new GlideRecord('sn_grc_profile_type');
+		if(!et.get('name',this.entityTypename)){
+			et.initialize();
+		}
+		et.name = this.entityTypename;
+		et.description = 'Servers where control checks are being performed';
+		et.active = 'true';
+		et.update();
+		
+		gs.info('[CS] ititial objects added');
+	},
+	
+    type: 'setup'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-08 15:35:00</sys_created_on>
+        <sys_id>b43afb231b1b8890ca7d319acd4bcb86</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>ObjectSetup</sys_name>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_update_name>sys_script_include_b43afb231b1b8890ca7d319acd4bcb86</sys_update_name>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-14 18:13:03</sys_updated_on>
+    </sys_script_include>
+</record_update>

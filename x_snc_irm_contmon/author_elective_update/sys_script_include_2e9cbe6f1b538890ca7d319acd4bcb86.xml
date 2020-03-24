@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_irm_contmon.setup</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Create default demo artifacts</description>
+        <name>setup</name>
+        <script><![CDATA[var setup = Class.create();
+setup.prototype = {
+    initialize: function() {
+		this.cmpName = 'CS'; //Default Company Name
+		this.policyName = 'CS Server Hardening'; //Policy
+		this.bs =['BondTrading','Ledger','WM_Online_Banking'];
+		this.entityTypename = 'Server_Hardening';
+		this.indicatorTemplateName = 'complianceCheckPass';
+    },
+	createArtifacts: function(){
+		
+		//Defualt company for CIs
+		var cmp = new GlideRecord('sys_company');
+		if(!cmp.get('name', this.cmpName)){
+			cmp.initialize();
+		}
+		cmp.name = this.cmpName;
+		cmp.update();
+		
+		var pol = new GlideRecord('sn_compliance_policy');
+		if(!pol.get('name', this.policyName)){
+			pol.initialize();
+		}
+		pol.name = this.policyName;
+		pol.update();
+		
+		this.bs.forEach(function(entry) {
+			var bs = new GlideRecord('cmdb_ci_service');
+			if(!bs.get('name', entry)){
+				bs.initialize();
+			}
+			bs.name = entry;
+			bs.update();
+		});
+		
+		var entt = new GlideRecord('sn_grc_profile_type');
+		if(!entt.get('name', this.entityTypename)){
+			entt.initialize();
+		}
+		entt.name = this.entityTypename;
+		entt.description = 'Server where compliance checkes are performed';
+		entt.update();
+		
+		//Create indicator template
+		//Leave the indicator empty, it must be configured manually
+		var indt = new GlideRecord('sn_grc_indicator_template');
+		if(!indt.get('name', this.indicatorTemplateName)){
+			indt.initialize();
+		}
+		indt.name = this.indicatorTemplateName;
+		indt.description = 'Server where compliance checkes are performed';
+		indt.active = 'true';
+		
+		indt.update();
+	},
+	
+    type: 'setup'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-08 15:34:01</sys_created_on>
+        <sys_id>2e9cbe6f1b538890ca7d319acd4bcb86</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>setup</sys_name>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_update_name>sys_script_include_2e9cbe6f1b538890ca7d319acd4bcb86</sys_update_name>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-14 10:11:18</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</application>
+        <file_path/>
+        <instance_id>5de43626dbddf680b2e05d00cf9619b0</instance_id>
+        <instance_name>mcebrianistdef1</instance_name>
+        <name>sys_script_include_2e9cbe6f1b538890ca7d319acd4bcb86</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_snc_irm_contmon.setup&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description&gt;Create default demo artifacts&lt;/description&gt;&lt;name&gt;setup&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var setup = Class.create();
+setup.prototype = {
+    initialize: function() {
+		this.cmpName = 'CS'; //Default Company Name
+		this.policyName = 'CS Server Hardening'; //Policy
+		this.bs =['BondTrading','Ledger','WM_Online_Banking'];
+		this.entityTypename = 'Server_Hardening';
+		this.indicatorTemplateName = 'complianceCheckPass';
+    },
+	createArtifacts: function(){
+		
+		//Defualt company for CIs
+		var cmp = new GlideRecord('sys_company');
+		if(!cmp.get('name', this.cmpName)){
+			cmp.initialize();
+		}
+		cmp.name = this.cmpName;
+		cmp.update();
+		
+		var pol = new GlideRecord('sn_compliance_policy');
+		if(!pol.get('name', this.policyName)){
+			pol.initialize();
+		}
+		pol.name = this.policyName;
+		pol.update();
+		
+		this.bs.forEach(function(entry) {
+			var bs = new GlideRecord('cmdb_ci_service');
+			if(!bs.get('name', entry)){
+				bs.initialize();
+			}
+			bs.name = entry;
+			bs.update();
+		});
+		
+		var entt = new GlideRecord('sn_grc_profile_type');
+		if(!entt.get('name', this.entityTypename)){
+			entt.initialize();
+		}
+		entt.name = this.entityTypename;
+		entt.description = 'Server where compliance checkes are performed';
+		entt.update();
+		
+		//Create indicator template
+		//Leave the indicator empty, it must be configured manually
+		var indt = new GlideRecord('sn_grc_indicator_template');
+		if(!indt.get('name', this.indicatorTemplateName)){
+			indt.initialize();
+		}
+		indt.name = this.indicatorTemplateName;
+		indt.description = 'Server where compliance checkes are performed';
+		indt.active = 'true';
+		
+		indt.update();
+	},
+	
+    type: 'setup'
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;miguel.cebrian&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-03-08 15:34:01&lt;/sys_created_on&gt;&lt;sys_id&gt;2e9cbe6f1b538890ca7d319acd4bcb86&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_name&gt;setup&lt;/sys_name&gt;&lt;sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon"&gt;c069266f1bdf4890ca7d319acd4bcb56&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="IRM-ContMon-Hardening"&gt;c069266f1bdf4890ca7d319acd4bcb56&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_2e9cbe6f1b538890ca7d319acd4bcb86&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;miguel.cebrian&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-03-14 10:11:18&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1953979121</payload_hash>
+        <record_name>setup</record_name>
+        <reverted_from/>
+        <source>4469266f1bdf4890ca7d319acd4bcb58</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-14 10:11:18</sys_created_on>
+        <sys_id>eec9e929dbef00d09c3f7c0565961992</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>170d886d01a0000001</sys_recorded_at>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-14 10:11:18</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>a6c9e929f1ef00d0d4ad87745a82d892</update_guid>
+        <update_guid_history>a6c9e929f1ef00d0d4ad87745a82d892:-1953979121,7e68e1299eef00d0656bf976dd030991:1759182580,2874d41d7323cc90583c8cef83282543:1628890385,3724141d4523cc906535e0d61a05bfb2:-2054094799,2b1affefa7d78890a54d85188838a8be:117329858</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-14 12:56:44</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>0f1090f8a7ae4dee9c210c6e99430184</sys_id>
+        <sys_metadata>2e9cbe6f1b538890ca7d319acd4bcb86</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>setup</sys_name>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_scope_delete display_value="">3e8bc975649a422990e15d6847488729</sys_scope_delete>
+        <sys_update_name>sys_script_include_2e9cbe6f1b538890ca7d319acd4bcb86</sys_update_name>
+        <sys_update_version display_value="sys_script_include_2e9cbe6f1b538890ca7d319acd4bcb86">eec9e929dbef00d09c3f7c0565961992</sys_update_version>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-14 12:56:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

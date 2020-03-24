@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_entry">
+    <sys_transform_entry action="INSERT_OR_UPDATE">
+        <choice_action>create</choice_action>
+        <coalesce>false</coalesce>
+        <coalesce_case_sensitive>false</coalesce_case_sensitive>
+        <coalesce_empty_fields>false</coalesce_empty_fields>
+        <date_format>yyyy-MM-dd HH:mm:ss</date_format>
+        <map display_value="Create Servers">884bbeab1b538890ca7d319acd4bcb1e</map>
+        <reference_value_field>name</reference_value_field>
+        <source_field>[Script]</source_field>
+        <source_script><![CDATA[answer = (function transformEntry(source) {
+	var cmp = new x_snc_irm_contmon.ObjectSetup();
+	return cmp.cmpName; // return the value to be put into the target field
+
+})(source);]]></source_script>
+        <source_table>x_snc_irm_contmon_cmdb_create_stg</source_table>
+        <sys_class_name>sys_transform_entry</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-08 11:01:32</sys_created_on>
+        <sys_id>919bfeeb1b538890ca7d319acd4bcbe7</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>[Script]</sys_name>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_update_name>sys_transform_entry_919bfeeb1b538890ca7d319acd4bcbe7</sys_update_name>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-14 12:50:03</sys_updated_on>
+        <target_field>company</target_field>
+        <target_table>cmdb_ci_server</target_table>
+        <use_source_script>true</use_source_script>
+    </sys_transform_entry>
+</record_update>
