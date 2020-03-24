@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element extends="sys_import_set_row" label="CMDB" max_length="40" name="x_snc_irm_contmon_check_result_stg" sizeclass="772470" type="collection">
+    <element extends="sys_import_set_row" label="check_result_stg" max_length="40" name="x_snc_irm_contmon_check_result_stg" sizeclass="772470" type="collection">
         <element attributes="edge_encryption_enabled=true,import_attribute_name=CheckID" label="CheckID" max_length="64" name="u_checkid" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Date" max_length="40" name="u_date" type="string"/>
         <element attributes="edge_encryption_enabled=true,import_attribute_name=Nodename" label="Nodename" max_length="40" name="u_nodename" type="string"/>

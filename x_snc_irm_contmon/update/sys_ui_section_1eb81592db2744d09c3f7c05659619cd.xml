@@ -98,6 +98,20 @@
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>7</position>
+            <sys_created_by>miguel.cebrian</sys_created_by>
+            <sys_created_on>2020-03-24 19:45:34</sys_created_on>
+            <sys_id>842d0fbcdbbbc8109c3f7c0565961921</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_irm_contmon_import_check" sys_domain="global" view="Default view">1eb81592db2744d09c3f7c05659619cd</sys_ui_section>
+            <sys_updated_by>miguel.cebrian</sys_updated_by>
+            <sys_updated_on>2020-03-24 19:45:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
             <header>false</header>

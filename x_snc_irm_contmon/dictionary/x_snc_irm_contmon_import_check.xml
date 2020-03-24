@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element extends="sys_import_set_row" label="import check" max_length="40" name="x_snc_irm_contmon_import_check" sizeclass="0" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element attributes="edge_encryption_enabled=true,import_attribute_name=BaselineCategory" label="BaselineCategory" max_length="40" name="u_baselinecategory" type="string"/>
         <element attributes="edge_encryption_enabled=true,import_attribute_name=CheckDescription" label="CheckDescription" max_length="93" name="u_checkdescription" type="string"/>
         <element attributes="edge_encryption_enabled=true,import_attribute_name=CheckID" label="CheckID" max_length="40" name="u_checkid" type="string"/>
