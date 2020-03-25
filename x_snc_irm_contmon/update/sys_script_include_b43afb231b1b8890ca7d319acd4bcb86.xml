@@ -75,10 +75,10 @@ var currentdate = gdt.getDate();\
 //currentdate.setValue('2020-02-23');\
 gs.info('[CS] indicator date:'+ currentdate.getDisplayValue());\
 \
-var dataIds = [];\
+result.supportingDataIds = [];\
 //Check if there are results failed for the date \
 var fails = new GlideRecord('x_snc_irm_contmon_cs_check_fail');\
-fails.addQuery('last_found', currentdate.getByFormat('yyyy-MM-dd'));\
+fails.addQuery('last_found','>=', currentdate.getByFormat('yyyy-MM-dd'));\
 fails.addQuery('ci', ci.sys_id);\
 fails.addQuery('check_name',checkId);\
 fails.query();\
@@ -89,14 +89,16 @@ while(fails.next()){\
 	result.passed = false;\
 	values += fails.comments;\
 	values += ';';\
-	dataIds.push(fails.sys_id);\
+	count++;\
+	var sysid = fails.sys_id;\
+	//gs.info('[CS] indicator sysid:'+sysid);\
+	result.supportingDataIds.push(sysid.toString());\
 }\
-gs.info('[CS] indicator values:'+values);\
+gs.info('[CS] indicator values:'+values+' - '+result.supportingDataIds);\
 result.value = count;\
 result.value = values;\
-result.supportingDataIds = dataIds;\
-		";
-		
+";
+	return script;	
 	},
     type: 'setup'
 };]]></script>
@@ -104,13 +106,13 @@ result.supportingDataIds = dataIds;\
         <sys_created_by>miguel.cebrian</sys_created_by>
         <sys_created_on>2020-03-08 15:35:00</sys_created_on>
         <sys_id>b43afb231b1b8890ca7d319acd4bcb86</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>ObjectSetup</sys_name>
         <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
         <sys_update_name>sys_script_include_b43afb231b1b8890ca7d319acd4bcb86</sys_update_name>
         <sys_updated_by>miguel.cebrian</sys_updated_by>
-        <sys_updated_on>2020-03-24 22:17:37</sys_updated_on>
+        <sys_updated_on>2020-03-25 10:14:39</sys_updated_on>
     </sys_script_include>
 </record_update>

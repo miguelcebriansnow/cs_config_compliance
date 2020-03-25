@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="standards " max_length="40" name="x_snc_irm_contmon_standards_checks_stg" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=BaselineCategory" label="BaselineCategory" max_length="40" name="u_baselinecategory" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=CheckDescription" label="CheckDescription" max_length="93" name="u_checkdescription" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=CheckID" label="CheckID" max_length="40" name="u_checkid" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=CheckTitle" label="CheckTitle" max_length="44" name="u_checktitle" type="string"/>
+    </element>
+</database>

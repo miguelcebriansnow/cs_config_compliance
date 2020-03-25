@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config">
+    <ua_table_licensing_config action="DELETE">
+        <is_fulfillment>false</is_fulfillment>
+        <license_condition/>
+        <license_model>none</license_model>
+        <license_roles/>
+        <name>x_snc_irm_contmon_standards_checks_stg</name>
+        <op_delete>true</op_delete>
+        <op_insert>true</op_insert>
+        <op_update>true</op_update>
+        <owner_condition/>
+        <sys_class_name>ua_table_licensing_config</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-25 11:14:23</sys_created_on>
+        <sys_id>31b16205dbff0c109c3f7c056596191d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_irm_contmon_standards_checks_stg</sys_name>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_update_name>ua_table_licensing_config_31b16205dbff0c109c3f7c056596191d</sys_update_name>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-25 11:14:23</sys_updated_on>
+    </ua_table_licensing_config>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</application>
+        <file_path/>
+        <instance_id>5de43626dbddf680b2e05d00cf9619b0</instance_id>
+        <instance_name>mcebrianistdef1</instance_name>
+        <name>ua_table_licensing_config_31b16205dbff0c109c3f7c056596191d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config"><ua_table_licensing_config action="INSERT_OR_UPDATE"><is_fulfillment>false</is_fulfillment><license_condition/><license_model>none</license_model><license_roles/><name>x_snc_irm_contmon_standards_checks_stg</name><op_delete>true</op_delete><op_insert>true</op_insert><op_update>true</op_update><owner_condition/><sys_class_name>ua_table_licensing_config</sys_class_name><sys_created_by>miguel.cebrian</sys_created_by><sys_created_on>2020-03-25 11:14:23</sys_created_on><sys_id>31b16205dbff0c109c3f7c056596191d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_snc_irm_contmon_standards_checks_stg</sys_name><sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package><sys_policy/><sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope><sys_update_name>ua_table_licensing_config_31b16205dbff0c109c3f7c056596191d</sys_update_name><sys_updated_by>miguel.cebrian</sys_updated_by><sys_updated_on>2020-03-25 11:14:23</sys_updated_on></ua_table_licensing_config></record_update>]]></payload>
+        <payload_hash>-167391580</payload_hash>
+        <record_name>x_snc_irm_contmon_standards_checks_stg</record_name>
+        <reverted_from/>
+        <source>a9e64b70dbbbc8109c3f7c05659619b2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-25 11:14:23</sys_created_on>
+        <sys_id>f1b16205dbff0c109c3f7c056596191f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>171116685f90000001</sys_recorded_at>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-25 11:14:23</sys_updated_on>
+        <type>Table Subscription Configuration</type>
+        <update_guid>f9b1620518ff0c1073b7ef72b2d18e1e</update_guid>
+        <update_guid_history>f9b1620518ff0c1073b7ef72b2d18e1e:-167391580</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-25 17:24:29</sys_created_on>
+        <sys_db_object display_value="" name="ua_table_licensing_config">ua_table_licensing_config</sys_db_object>
+        <sys_id>02a5424cdbe34ab8800da0487ca70644</sys_id>
+        <sys_metadata>31b16205dbff0c109c3f7c056596191d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_irm_contmon_standards_checks_stg</sys_name>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_scope_delete display_value="">3e8bc975649a422990e15d6847488729</sys_scope_delete>
+        <sys_update_name>ua_table_licensing_config_31b16205dbff0c109c3f7c056596191d</sys_update_name>
+        <sys_update_version display_value="ua_table_licensing_config_31b16205dbff0c109c3f7c056596191d">f1b16205dbff0c109c3f7c056596191f</sys_update_version>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-25 17:24:29</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -4,30 +4,29 @@
         <coalesce>false</coalesce>
         <coalesce_case_sensitive>false</coalesce_case_sensitive>
         <coalesce_empty_fields>false</coalesce_empty_fields>
-        <date_format>yyyy-MM-dd</date_format>
-        <map display_value="create indicator template">adcb216ddbef00d09c3f7c056596199d</map>
+        <date_format>yyyy-MM-dd HH:mm:ss</date_format>
+        <map display_value="create indicators2">3561e6c1dbff0c109c3f7c05659619e3</map>
         <reference_value_field/>
         <source_field>[Script]</source_field>
         <source_script><![CDATA[answer = (function transformEntry(source) {
 
-	// Add your code here
-	return "2020-01-23"; // return the value to be put into the target field
+	return "true"; // return the value to be put into the target field
 
 })(source);]]></source_script>
-        <source_table>x_snc_irm_contmon_import_check</source_table>
+        <source_table>x_snc_irm_contmon_standards_checks_stg</source_table>
         <sys_class_name>sys_transform_entry</sys_class_name>
         <sys_created_by>miguel.cebrian</sys_created_by>
-        <sys_created_on>2020-03-24 21:46:09</sys_created_on>
-        <sys_id>9578ef7cdb7fc8109c3f7c056596199e</sys_id>
+        <sys_created_on>2020-03-25 11:43:39</sys_created_on>
+        <sys_id>88586e4ddbff0c109c3f7c056596195f</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>[Script]</sys_name>
         <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
         <sys_policy/>
         <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
-        <sys_update_name>sys_transform_entry_9578ef7cdb7fc8109c3f7c056596199e</sys_update_name>
+        <sys_update_name>sys_transform_entry_88586e4ddbff0c109c3f7c056596195f</sys_update_name>
         <sys_updated_by>miguel.cebrian</sys_updated_by>
-        <sys_updated_on>2020-03-24 21:46:09</sys_updated_on>
-        <target_field>first_run_date</target_field>
+        <sys_updated_on>2020-03-25 11:43:39</sys_updated_on>
+        <target_field>active</target_field>
         <target_table>sn_grc_indicator_template</target_table>
         <use_source_script>true</use_source_script>
     </sys_transform_entry>

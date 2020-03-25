@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="System Import Sets">import_sets</application>
+        <assessment/>
+        <content_page/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>standards </mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_snc_irm_contmon_standards_checks_stg</name>
+        <order>1100</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-25 11:14:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>42b16205dbff0c109c3f7c0565961931</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>standards </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_update_name>sys_app_module_42b16205dbff0c109c3f7c0565961931</sys_update_name>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-25 11:14:24</sys_updated_on>
+        <timeline_page/>
+        <title>standards </title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</application>
+        <file_path/>
+        <instance_id>5de43626dbddf680b2e05d00cf9619b0</instance_id>
+        <instance_name>mcebrianistdef1</instance_name>
+        <name>sys_app_module_42b16205dbff0c109c3f7c0565961931</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="System Import Sets">import_sets</application><assessment/><content_page/><device_type/><filter/><hint/><homepage/><image/><link_type>LIST</link_type><map_page/><mobile_title>standards </mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_snc_irm_contmon_standards_checks_stg</name><order>1100</order><override_menu_roles>false</override_menu_roles><query/><report/><roles/><sys_class_name>sys_app_module</sys_class_name><sys_created_by>miguel.cebrian</sys_created_by><sys_created_on>2020-03-25 11:14:24</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>42b16205dbff0c109c3f7c0565961931</sys_id><sys_mod_count>0</sys_mod_count><sys_name>standards </sys_name><sys_overrides/><sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package><sys_policy/><sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope><sys_update_name>sys_app_module_42b16205dbff0c109c3f7c0565961931</sys_update_name><sys_updated_by>miguel.cebrian</sys_updated_by><sys_updated_on>2020-03-25 11:14:24</sys_updated_on><timeline_page/><title>standards </title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>965236426</payload_hash>
+        <record_name>standards </record_name>
+        <reverted_from/>
+        <source>a9e64b70dbbbc8109c3f7c05659619b2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-25 11:14:24</sys_created_on>
+        <sys_id>ceb16205dbff0c109c3f7c0565961933</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>171116688260000001</sys_recorded_at>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-25 11:14:24</sys_updated_on>
+        <type>Module</type>
+        <update_guid>c6b162058bff0c10e474d4fa3582d233</update_guid>
+        <update_guid_history>c6b162058bff0c10e474d4fa3582d233:965236426</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="standards ">2266bf09dbf74c109c3f7c056596194b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-25 17:24:27</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>0e95b07fe9f445d892b626dde760f040</sys_id>
+        <sys_metadata>42b16205dbff0c109c3f7c0565961931</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>standards </sys_name>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_scope_delete display_value="">3e8bc975649a422990e15d6847488729</sys_scope_delete>
+        <sys_update_name>sys_app_module_42b16205dbff0c109c3f7c0565961931</sys_update_name>
+        <sys_update_version display_value="sys_app_module_42b16205dbff0c109c3f7c0565961931">ceb16205dbff0c109c3f7c0565961933</sys_update_version>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-25 17:24:27</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
