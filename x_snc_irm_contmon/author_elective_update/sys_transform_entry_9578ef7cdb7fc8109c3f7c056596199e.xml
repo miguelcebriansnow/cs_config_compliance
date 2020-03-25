@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_entry">
+    <sys_transform_entry action="DELETE">
+        <choice_action>create</choice_action>
+        <coalesce>false</coalesce>
+        <coalesce_case_sensitive>false</coalesce_case_sensitive>
+        <coalesce_empty_fields>false</coalesce_empty_fields>
+        <date_format>yyyy-MM-dd</date_format>
+        <map display_value="create indicator template">adcb216ddbef00d09c3f7c056596199d</map>
+        <reference_value_field/>
+        <source_field>[Script]</source_field>
+        <source_script><![CDATA[answer = (function transformEntry(source) {
+
+	// Add your code here
+	return "2020-01-23"; // return the value to be put into the target field
+
+})(source);]]></source_script>
+        <source_table>x_snc_irm_contmon_import_check</source_table>
+        <sys_class_name>sys_transform_entry</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-24 21:46:09</sys_created_on>
+        <sys_id>9578ef7cdb7fc8109c3f7c056596199e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>[Script]</sys_name>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_update_name>sys_transform_entry_9578ef7cdb7fc8109c3f7c056596199e</sys_update_name>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-24 21:46:09</sys_updated_on>
+        <target_field>first_run_date</target_field>
+        <target_table>sn_grc_indicator_template</target_table>
+        <use_source_script>true</use_source_script>
+    </sys_transform_entry>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</application>
+        <file_path/>
+        <instance_id>5de43626dbddf680b2e05d00cf9619b0</instance_id>
+        <instance_name>mcebrianistdef1</instance_name>
+        <name>sys_transform_entry_9578ef7cdb7fc8109c3f7c056596199e</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_transform_entry"&gt;&lt;sys_transform_entry action="INSERT_OR_UPDATE"&gt;&lt;choice_action&gt;create&lt;/choice_action&gt;&lt;coalesce&gt;false&lt;/coalesce&gt;&lt;coalesce_case_sensitive&gt;false&lt;/coalesce_case_sensitive&gt;&lt;coalesce_empty_fields&gt;false&lt;/coalesce_empty_fields&gt;&lt;date_format&gt;yyyy-MM-dd&lt;/date_format&gt;&lt;map display_value="create indicator template"&gt;adcb216ddbef00d09c3f7c056596199d&lt;/map&gt;&lt;reference_value_field/&gt;&lt;source_field&gt;[Script]&lt;/source_field&gt;&lt;source_script&gt;&lt;![CDATA[answer = (function transformEntry(source) {
+
+	// Add your code here
+	return "2020-01-23"; // return the value to be put into the target field
+
+})(source);]]&gt;&lt;/source_script&gt;&lt;source_table&gt;x_snc_irm_contmon_import_check&lt;/source_table&gt;&lt;sys_class_name&gt;sys_transform_entry&lt;/sys_class_name&gt;&lt;sys_created_by&gt;miguel.cebrian&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-03-24 21:46:09&lt;/sys_created_on&gt;&lt;sys_id&gt;9578ef7cdb7fc8109c3f7c056596199e&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;[Script]&lt;/sys_name&gt;&lt;sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon"&gt;c069266f1bdf4890ca7d319acd4bcb56&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="IRM-ContMon-Hardening"&gt;c069266f1bdf4890ca7d319acd4bcb56&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_transform_entry_9578ef7cdb7fc8109c3f7c056596199e&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;miguel.cebrian&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-03-24 21:46:09&lt;/sys_updated_on&gt;&lt;target_field&gt;first_run_date&lt;/target_field&gt;&lt;target_table&gt;sn_grc_indicator_template&lt;/target_table&gt;&lt;use_source_script&gt;true&lt;/use_source_script&gt;&lt;/sys_transform_entry&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1068404656</payload_hash>
+        <record_name>[Script]</record_name>
+        <reverted_from/>
+        <source>a9e64b70dbbbc8109c3f7c05659619b2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-24 21:46:09</sys_created_on>
+        <sys_id>66b8affcdb7fc8109c3f7c05659619bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1710e828f7e0000001</sys_recorded_at>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-24 21:46:09</sys_updated_on>
+        <type>Field Map</type>
+        <update_guid>aeb8273c497fc81098c8e9c3875668c6</update_guid>
+        <update_guid_history>aeb8273c497fc81098c8e9c3875668c6:-1068404656</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-25 11:44:42</sys_created_on>
+        <sys_db_object display_value="" name="sys_transform_entry">sys_transform_entry</sys_db_object>
+        <sys_id>9eedc0702329498299f6fa8db1c859b1</sys_id>
+        <sys_metadata>9578ef7cdb7fc8109c3f7c056596199e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>[Script]</sys_name>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_scope_delete display_value="">3e8bc975649a422990e15d6847488729</sys_scope_delete>
+        <sys_update_name>sys_transform_entry_9578ef7cdb7fc8109c3f7c056596199e</sys_update_name>
+        <sys_update_version display_value="sys_transform_entry_9578ef7cdb7fc8109c3f7c056596199e">66b8affcdb7fc8109c3f7c05659619bd</sys_update_version>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-25 11:44:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

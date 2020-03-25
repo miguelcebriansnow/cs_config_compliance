@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_wizard_answer">
+    <sys_wizard_answer action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <answer>CM Server</answer>
+        <button_label/>
+        <dependent_value/>
+        <element/>
+        <name>CM Server</name>
+        <next_question/>
+        <order>100</order>
+        <payload_name/>
+        <question display_value="Base Configuration Item" name="Base Configuration Item">a3251608db2123005cde7b7e0f961961</question>
+        <roles/>
+        <script/>
+        <sys_class_name>sys_wizard_answer</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-13 09:02:38</sys_created_on>
+        <sys_id>ba705c95db23cc909c3f7c0565961992</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CM Server</sys_name>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_update_name>sys_wizard_answer_ba705c95db23cc909c3f7c0565961992</sys_update_name>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-13 09:02:38</sys_updated_on>
+        <table/>
+        <target_url>x_snc_irm_contmon_cm_server.do</target_url>
+        <type>1</type>
+    </sys_wizard_answer>
+</record_update>

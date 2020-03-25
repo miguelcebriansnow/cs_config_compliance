@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="INSERT_OR_UPDATE">
+        <operation>create</operation>
+        <source_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>miguel.cebrian</sys_created_by>
+        <sys_created_on>2020-03-16 09:06:08</sys_created_on>
+        <sys_id>df0eeb46dbab04d09c3f7c05659619b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>sn_compliance_m2m_policy_policy_statement</sys_name>
+        <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
+        <sys_update_name>sys_scope_privilege_df0eeb46dbab04d09c3f7c05659619b6</sys_update_name>
+        <sys_updated_by>miguel.cebrian</sys_updated_by>
+        <sys_updated_on>2020-03-16 09:06:08</sys_updated_on>
+        <target_name>sn_compliance_m2m_policy_policy_statement</target_name>
+        <target_scope display_value="GRC: Policy and Compliance Management">4a3281d053030200d23c9c25911c086f</target_scope>
+        <target_type>sys_db_object</target_type>
+    </sys_scope_privilege>
+</record_update>
