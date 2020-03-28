@@ -14,6 +14,7 @@ ObjectSetup.prototype = {
 		this.bs =['BondTrading','Ledger','WM_Online_Banking'];
 		this.standard = 'Systems hardening';
 		this.entityTypename = 'Server hardening';
+		this.grcTypeName = 'configuration_compliance';
     },
 	createArtifacts: function(){
 		gs.info('[CS] Setting up intial objects.');
@@ -56,49 +57,116 @@ ObjectSetup.prototype = {
 		et.active = 'true';
 		et.update();
 		
+		//Adding control type
+		gs.info('[CS] GRC Type:'+this.grcTypeName);
+		
+		var gt = new GlideRecord('sn_grc_choice');
+		if(!gt.get('name',this.grcTypeName)){
+			gt.initialize();
+		}
+		gt.name = this.grcTypeName;
+		gt.choice_category = 'Category';
+		gt.label = this.grcTypeName;
+		gt.set = 'Control/policy Satement';
+		gt.update();
 		gs.info('[CS] ititial objects added');
 		
 	},
 	createIndicatorTemplate: function(ctrl_obj){
 		
 	},
+	_getFailedResults: function(result, ci, checkId){
+		result.supportingDataIds = [];
+		//Check if there are results failed for the date 
+		var fails = new GlideRecord('x_snc_irm_contmon_cs_check_fail');
+		fails.addQuery('last_found', '>=', currentdate.getByFormat('yyyy-MM-dd'));
+		fails.addQuery('ci', ci.sys_id);
+		fails.addQuery('check_name', checkId);
+		fails.query();
+		gs.info('[CS] indicator fails:' + fails.getRowCount() + ' qr:' + fails.getEncodedQuery());
+		var values = '';
+		var count = 0;
+		while (fails.next()) {
+			result.passed = false;
+			values += fails.comments;
+			values += ';';
+			count++;
+			var sysid = fails.sys_id;
+			//gs.info('[CS] indicator sysid:'+sysid);
+			result.supportingDataIds.push(sysid.toString());
+		}
+		gs.info('[CS] indicator values:' + values + ' - ' + result.supportingDataIds);
+		result.value = count;
+		result.value = values;
+	},
+	evaluateIndicatorV2: function(current, result) {
+		result.passed = true;
+		//Look for the past day if there are any failed results
+		var ci = current.profile.applies_to;
+		var checkId = current.instructions;
+		gs.info('[CS] indicator ci:' + ci.name);
+		var gdt = GlideDateTime();
+		//gdt.addDaysUTC(-1);
+		gdt.addDaysUTC(-45);
+		var currentdate = gdt.getDate();
+		//currentdate.setValue('2020-02-23');
+		gs.info('[CS] indicator date:' + currentdate.getDisplayValue());
+		this._getFailedResults(result,ci,checkId);
+
+	},	
+	
+	evaluateIndicator: function(current, result) {
+		result.passed = true;
+		//Look for the past day if there are any failed results
+		var ci = current.profile.applies_to;
+	    var checkId = current.content.reference;
+	    gs.info('[CS] indicator ci:' + ci.name);
+	    var gdt = GlideDateTime();
+	    //gdt.addDaysUTC(-1);
+	    gdt.addDaysUTC(-45);
+	    var currentdate = gdt.getDate();
+	    //currentdate.setValue('2020-02-23');
+	    gs.info('[CS] indicator date:' + currentdate.getDisplayValue());
+		
+		this._getFailedResults(result,ci,checkId);
+	},
 	getIndicatorTemplateScript: function(){
-		var script = "result.passed = true;\
-//Look for the past day if there are any failed results\
-var ci = current.profile.applies_to;\
-var checkId = current.content.reference;\
-gs.info('[CS] indicator ci:'+ci.name);\
-var gdt = GlideDateTime();\
-//gdt.addDaysUTC(-1);\
-gdt.addDaysUTC(-45);\
-var currentdate = gdt.getDate();\
-//currentdate.setValue('2020-02-23');\
-gs.info('[CS] indicator date:'+ currentdate.getDisplayValue());\
-\
-result.supportingDataIds = [];\
-//Check if there are results failed for the date \
-var fails = new GlideRecord('x_snc_irm_contmon_cs_check_fail');\
-fails.addQuery('last_found','>=', currentdate.getByFormat('yyyy-MM-dd'));\
-fails.addQuery('ci', ci.sys_id);\
-fails.addQuery('check_name',checkId);\
-fails.query();\
-gs.info('[CS] indicator fails:'+fails.getRowCount() + ' qr:'+fails.getEncodedQuery());\
-var values = '';\
-var count = 0;\
-while(fails.next()){\
-	result.passed = false;\
-	values += fails.comments;\
-	values += ';';\
-	count++;\
-	var sysid = fails.sys_id;\
-	//gs.info('[CS] indicator sysid:'+sysid);\
-	result.supportingDataIds.push(sysid.toString());\
-}\
-gs.info('[CS] indicator values:'+values+' - '+result.supportingDataIds);\
-result.value = count;\
-result.value = values;\
-";
+		var script = "var evaluator = new x_snc_irm_contmon.ObjectSetup();\n\
+	evaluator.evaluateIndicator(current, result);\n\
+	";
 	return script;	
+	},
+	setControlsToMonitoring: function(){
+		var ctrls = new GlideRecord('sn_compliance_control');
+		this._getComplianceControls(ctrls);
+		gs.info('[CS] Setting controls To monitor ctrls: '+ctrls);
+		this._advanceToState(ctrls, 'monitor');
+		
+	},
+	_advanceToState: function(ctrls, state){
+		gs.info('[CS] Setting controls To monitor2 ctrls: '+ctrls.getRowCount());
+		
+		while(ctrls.next()){
+			gs.info('[CS] updating: '+ctrls.number);
+			ctrls.state = state;
+			ctrls.update();
+			this._sleep(1000);
+		}
+	},
+	_sleep: function(milliseconds) {
+	    date = Date.now();
+	    currentDate = null;
+	    do {
+	        currentDate = Date.now();
+	    } while (currentDate - date < milliseconds);
+	},
+	_getComplianceControls: function(ctrls){
+		ctrls.initialize();
+		ctrls.addQuery('category.name', this.grcTypeName);
+		ctrls.orderBy('number');
+		ctrls.setLimit(2);
+		
+		ctrls.query();
 	},
     type: 'setup'
 };]]></script>
@@ -106,13 +174,13 @@ result.value = values;\
         <sys_created_by>miguel.cebrian</sys_created_by>
         <sys_created_on>2020-03-08 15:35:00</sys_created_on>
         <sys_id>b43afb231b1b8890ca7d319acd4bcb86</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>ObjectSetup</sys_name>
         <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
         <sys_update_name>sys_script_include_b43afb231b1b8890ca7d319acd4bcb86</sys_update_name>
         <sys_updated_by>miguel.cebrian</sys_updated_by>
-        <sys_updated_on>2020-03-25 10:14:39</sys_updated_on>
+        <sys_updated_on>2020-03-28 11:25:38</sys_updated_on>
     </sys_script_include>
 </record_update>
