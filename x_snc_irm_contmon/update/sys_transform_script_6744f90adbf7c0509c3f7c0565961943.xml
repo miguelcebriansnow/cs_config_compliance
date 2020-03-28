@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_script">
     <sys_transform_script action="INSERT_OR_UPDATE">
         <active>true</active>
-        <map display_value="crete control objective">08231c59db23cc909c3f7c0565961917</map>
+        <map display_value="control objective v2">3ebe658edbb3c0509c3f7c0565961909</map>
         <order>100</order>
         <script><![CDATA[(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
-	gs.info('[CS] attaching control objective to standard:'+target.name);
+	
+	var vars = new x_snc_irm_contmon.ObjectSetup();
+	
+	gs.info('[CS] attaching control objective to standard:'+vars.standard);
     var std = new GlideRecord('sn_compliance_policy');
-    if (std.get('name', source.u_baselinecategory)) {
+    if (std.get('name', vars.standard)) {
 		gs.info('[CS] entity found:'+std.name);
         // cretae the control objective to entity type mapping
         var m2m = new GlideRecord('sn_compliance_m2m_policy_policy_statement');
@@ -18,37 +21,20 @@
     } else {
         gs.error('[CS Import] Cant find entyt type for binding with object: ' + target.name);
     }
-	
-	gs.info('[CS] attaching entity type to control objective :' + target.name);
-    var entt = new GlideRecord('sn_grc_profile_type');
-    var stup = new x_snc_irm_contmon.ObjectSetup();
-    if (entt.get('name', stup.entityTypename)) {
-        gs.info('[CS] entity found:' + entt.sys_id);
-        // cretae the control objective to entity type mapping
-        var m22m = new GlideRecord('sn_compliance_m2m_statement_profile_type');
-        m22m.initialize();
-        m22m.sn_compliance_statement = target.sys_id;
-        m22m.sn_grc_profile_type = entt.sys_id;
-        var val1 = m22m.insert();
-        gs.info('[CS] entity attached ret:' + val1 + ' taget: ' + target.name);
-    } else {
-        gs.error('[CS Import] Cant find entyt type for binding with object: ' + target.name);
-    }
-	
-	
+
 })(source, map, log, target);]]></script>
         <sys_class_name>sys_transform_script</sys_class_name>
         <sys_created_by>miguel.cebrian</sys_created_by>
-        <sys_created_on>2020-03-14 10:55:40</sys_created_on>
-        <sys_id>b042bd65db2340d09c3f7c0565961962</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_created_on>2020-03-28 10:36:55</sys_created_on>
+        <sys_id>6744f90adbf7c0509c3f7c0565961943</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>onAfter</sys_name>
         <sys_package display_value="IRM-ContMon-Hardening" source="x_snc_irm_contmon">c069266f1bdf4890ca7d319acd4bcb56</sys_package>
         <sys_policy/>
         <sys_scope display_value="IRM-ContMon-Hardening">c069266f1bdf4890ca7d319acd4bcb56</sys_scope>
-        <sys_update_name>sys_transform_script_b042bd65db2340d09c3f7c0565961962</sys_update_name>
+        <sys_update_name>sys_transform_script_6744f90adbf7c0509c3f7c0565961943</sys_update_name>
         <sys_updated_by>miguel.cebrian</sys_updated_by>
-        <sys_updated_on>2020-03-26 12:50:15</sys_updated_on>
+        <sys_updated_on>2020-03-28 10:36:55</sys_updated_on>
         <when>onAfter</when>
     </sys_transform_script>
 </record_update>
